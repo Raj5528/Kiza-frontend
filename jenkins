@@ -16,23 +16,22 @@ pipeline {
     stages {
         stage('Checkout Repository') {
             steps {
-                echo 'Cloning the GitHub repository...'
+                echo '📦 Cloning the GitHub repository...'
                 git branch: 'main', url: 'https://github.com/Raj5528/Kiza-frontend.git'
             }
         }
 
-        stage('Install dependencies') {
+        stage('Install Dependencies') {
             steps {
-                    powershell 'npm install'
-                }
+                echo '📥 Installing npm dependencies...'
+                powershell 'npm install'
             }
         }
 
         stage('Deploy') {
             steps {
-                
-                    powershell 'npm start'
-                
+                echo '🚀 Starting the development server...'
+                powershell 'npm start'
             }
         }
     }
