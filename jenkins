@@ -30,9 +30,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                dir('front-end/front-end') {
+                
                     powershell 'npm start'
-                }
+                
             }
         }
     }
